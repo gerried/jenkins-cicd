@@ -11,7 +11,7 @@ RUN jlink \
          --output /javaruntime
 
 FROM debian:bullseye-20220912-slim
-ARG TERRAFORM_VERSION=0.13.5
+ARG TERRAFORM_VERSION>=1.1.5
 
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
