@@ -80,15 +80,8 @@ RUN pip --version
 ####################################
 #installing AWS cli
 ####################################
-RUN pip install awscli --upgrade --user
-
-# add aws cli location to path
-ENV PATH=~/.local/bin:$PATH
-
-# Adds local templates directory and contents in /usr/local/terrafrom-templates
-# ADD templates /usr/local/bin/templates
-
-RUN mkdir ~/.aws && touch ~/.aws/credentials
+RUN pip install --upgrade pip && \
+    pip install --upgrade awscli
 
 ####################################
 #installing ansible
